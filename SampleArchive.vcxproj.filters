@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="third_party">
+      <UniqueIdentifier>{a7f1b9f0-2de2-410f-a3ae-131ed826ef84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\zlib">
+      <UniqueIdentifier>{1f7c8016-8d95-4e1a-9ee0-af13e48ffc04}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="third_party\wcxhead.h">
+      <Filter>third_party</Filter>
+    </ClInclude>
+    <ClInclude Include="archive.hpp" />
+    <ClInclude Include="precompiled_header.hpp" />
+    <ClInclude Include="utils.hpp" />
+    <ClInclude Include="third_party\str_view.hpp">
+      <Filter>third_party</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\zlib-1.3.1\crc32.h">
+      <Filter>third_party\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\zlib-1.3.1\deflate.h">
+      <Filter>third_party\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\zlib-1.3.1\inffast.h">
+      <Filter>third_party\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\zlib-1.3.1\inffixed.h">
+      <Filter>third_party\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\zlib-1.3.1\inflate.h">
+      <Filter>third_party\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\zlib-1.3.1\inftrees.h">
+      <Filter>third_party\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\zlib-1.3.1\trees.h">
+      <Filter>third_party\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\zlib-1.3.1\zconf.h">
+      <Filter>third_party\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\zlib-1.3.1\zlib.h">
+      <Filter>third_party\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\zlib-1.3.1\zutil.h">
+      <Filter>third_party\zlib</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="archive.cpp" />
+    <ClCompile Include="entry_points.cpp" />
+    <ClCompile Include="precompiled_header.cpp" />
+    <ClCompile Include="utils.cpp" />
+    <ClCompile Include="entry_points_ansi.cpp" />
+    <ClCompile Include="third_party\zlib-1.3.1\adler32.c">
+      <Filter>third_party\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\zlib-1.3.1\compress.c">
+      <Filter>third_party\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\zlib-1.3.1\crc32.c">
+      <Filter>third_party\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\zlib-1.3.1\deflate.c">
+      <Filter>third_party\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\zlib-1.3.1\infback.c">
+      <Filter>third_party\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\zlib-1.3.1\inffast.c">
+      <Filter>third_party\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\zlib-1.3.1\inflate.c">
+      <Filter>third_party\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\zlib-1.3.1\inftrees.c">
+      <Filter>third_party\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\zlib-1.3.1\trees.c">
+      <Filter>third_party\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\zlib-1.3.1\uncompr.c">
+      <Filter>third_party\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="third_party\zlib-1.3.1\zutil.c">
+      <Filter>third_party\zlib</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

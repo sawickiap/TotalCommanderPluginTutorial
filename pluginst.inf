@@ -1,0 +1,6 @@
+[plugininstall]
+description=Sample Archive from Tutorial
+type=wcx
+file=SampleArchive.wcx64
+defaultdir=SampleArchive
+defaultextension=smpa
