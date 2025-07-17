@@ -30,7 +30,7 @@
   <ItemGroup>
     <ClCompile Include="archive.cpp" />
     <ClCompile Include="entry_points.cpp" />
-    <ClCompile Include="entry_points_ansi.cpp" />
+    <ClCompile Include="entry_points_legacy.cpp" />
     <ClCompile Include="precompiled_header.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
