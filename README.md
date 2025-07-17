@@ -4,7 +4,7 @@ This repository contains sample code accompanying a tutorial about writing a Pac
 
 It also defines a simple, custom archive format that uses [zlib](https://zlib.net) library for data compression.
 
-The tutorial itself will be available online in 2026.
+The tutorial itself will be available online some time in the future.
 
 Author: Adam Sawicki, https://asawicki.info
 
