@@ -1,4 +1,4 @@
-.vs/
-SampleArchive/
-x64/Debug/
-x64/Release/
+/src/.vs/
+/src/SampleArchive/
+/src/x64/Debug/
+/src/x64/Release/
