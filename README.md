@@ -15,9 +15,9 @@ Written for Windows in C++ using Visual Studio 2022.
 External libraries used:
 
 - [zlib](https://zlib.net) - data compression library
-    - Bundled in `third_party\zlib-1.3.1`
+    - Bundled in `src\third_party\zlib-1.3.1`
 - [str_view](https://github.com/sawickiap/str_view) - null-termination-aware string-view class for C++
-    - Bundled in `third_party\str_view.hpp`
+    - Bundled in `src\third_party\str_view.hpp`
 
 ## File format
 
