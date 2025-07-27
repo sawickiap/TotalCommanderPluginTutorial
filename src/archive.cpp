@@ -101,6 +101,17 @@ static inline bool EnableCompressionForFile(uint64_t file_size)
     return kEnableCompression && file_size >= kMinFileSizeForCompression;
 }
 
+static std::vector<std::wstring> ParseStringList(const wchar_t* list)
+{
+    std::vector<std::wstring> result;
+    while (*list != '\0')
+    {
+        result.emplace_back(std::wstring{list});
+        list += wcslen(list) + 1;
+    }
+    return result;
+}
+
 /*
 In some old version of Total Commander I've noticed call to SetProcessDataProc
 with hArcData == NULL. That's why I support saving this pointer in global
@@ -642,24 +653,23 @@ int PackingArchive::PackFilesW(wchar_t* packedFile, wchar_t* subPath, wchar_t* s
         throw E_EABORTED;
     last_progress_time_ = GetTickCount64();
 
-    std::vector<std::wstring> relative_paths_to_add;
-    std::wstring add_list_path;
-    while(*addList != L'\0')
+    auto relative_paths_to_add = ParseStringList(addList);
+
+    for(size_t i = relative_paths_to_add.size(); i--; )
     {
-        add_list_path = addList;
+        auto& path = relative_paths_to_add[i];
 
-        /*
-        In the special mode when !savePaths, process only files and not directories.
-        Directories have trailing '\\' in their paths.
-        */
-        if(save_paths || add_list_path.back() != L'\\')
+        // In the special mode when !save_paths, process only files and not directories.
+        // Directories have trailing '\\' in their paths.
+        if(!save_paths && path.back() == L'\\')
         {
-            StripTrailingSlash(add_list_path);
-            assert(!add_list_path.empty());
-            relative_paths_to_add.push_back(add_list_path);
+            relative_paths_to_add.erase(relative_paths_to_add.begin() + i);
         }
-
-        addList += wcslen(addList) + 1;
+        else
+        {
+            StripTrailingSlash(path);
+            assert(!path.empty());
+        }
     }
 
     /*
@@ -858,20 +868,16 @@ int DeletingArchive::DeleteFilesW(wchar_t* packedFile, wchar_t* deleteList)
         throw E_EABORTED;
     last_progress_time_ = GetTickCount64();
 
-    // Upper-case, sorted.
-    std::vector<std::wstring> paths_to_delete;
-
-    while (*deleteList != '\0')
+    // They will be upper-case and sorted.
+    auto paths_to_delete = ParseStringList(deleteList);
+    
+    for (auto& path : paths_to_delete)
     {
-        std::wstring path = deleteList;
         if (path.ends_with(L"*.*"))
             path.erase(path.length() - 3);
         StripTrailingSlash(path);
         assert(!path.empty());
         UpperCase(path);
-        paths_to_delete.push_back(path);
-
-        deleteList += wcslen(deleteList) + 1;
     }
 
     std::sort(paths_to_delete.begin(), paths_to_delete.end());
